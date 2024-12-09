@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="/css/receita.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Major+Mono+Display&family=Overlock+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Baloo+Thambi+2:wght@400..800&family=Major+Mono+Display&family=Overlock+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* Adicione a classe show-description */
+        .show-description {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="complete-box">
+        <nav class="nav">
+            <button onclick="window.location.href='/tela_02/tela_cards.html'" id="btn_voltar" aria-hidden="true">Voltar</button>
+            <button id="leitura">Leitura</button>
+        </nav>
+        <main class="principal">
+            <header class="container-topo">
+                 <figure class="container-img">
+                     <img src="/src/bolo_chocolate.jpg" alt="Um bolo de chocolate">
+                 </figure>
+                 <section class="container-titulo">
+                    <h1 class="titulo-receita">Bolo de Chocolate</h1>
+                 </section>
+            </header>
+            <aside class="container-video" alt="Vídeo da Receita completa do bolo de chocolate">
+                <iframe id="video" src="https://www.youtube.com/embed/QFMxJWh3mqE?si=8IRtF8b4678qzA32" title="YouTube video da receita" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius: 40px;"></iframe>
+            </aside>
+            <section>
+                <h2 class="decoracao-section" id="ingredientes-titulo">Ingredientes</h2>
+                <ul class="receita-texto" style="list-style-type: none;">
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>4 ovos</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 e 1/2 xícara de (chá) de açúcar - (250g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>3/4 xícara de (chá) de óleo - (180ml)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1/2 xícara de (chá) de água quente - (120ml)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>2 colheres de (sopa) de cacau em pó - (40g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 e 1/2 e xícara de (chá) de farinha de trigo - (180g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>2 colheres de (sopa) de amido de milho - (40g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 colher de (chá) de fermento químico - (10g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 colher de (café) de bicarbonato - (5g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>Observação* Se não tiver bicarbonato, use então 1 colher de sopa de fermento (15g).</p></li>
+                </ul>
+            </section>
+            <section>
+                <h3 class="decoracao-section" id="calda-titulo">CALDA CREMOSA</h3>
+                <ul class="receita-texto" style="list-style-type: none;">
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1/2 xícara de (chá) de leite integral - (125ml)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1/2 caixinha de creme de leite - (100g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 colher de (sopa) de chocolate em pó - (20g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 colher de (sopa) de manteiga  - (15g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>3 colheres de (sopa) de açúcar - (60g)</p></li>
+                </ul>
+            </section>
+            <section>
+                <h3 class="decoracao-section" id="cobertura-titulo">COBERTURA DE BRIGADEIRO</h3>
+                <ul class="receita-texto" style="list-style-type: none;">
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 e 1/2 caixa de leite condensado - (592g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>2 colheres de (sopa) de chocolate em pó - (40g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 colher de (sopa) manteiga - (15g)</p></li>
+                    <li><input type="checkbox" id="checkbox" class="colored-checkbox"><p>1 caixa de creme de leite - (200g)</p></li>
+                </ul>
+            </section>
+         </main>
+    </div>
+    <script>
+
+document.getElementById('btn_voltar').addEventListener('click', function() {
+        // Texto explicativo sobre o funcionamento do site de receitas de bolo
+        const explicacao = `
+            Você voltou para a tela de receitas!
+        `;
+
+        if ('speechSynthesis' in window) {
+            const synth = window.speechSynthesis;
+
+            // Interrompe qualquer fala em andamento
+            if (synth.speaking) {
+                synth.cancel();
+            }
+
+            const utterance = new SpeechSynthesisUtterance(explicacao);
+            utterance.lang = 'pt-BR';
+
+            synth.onvoiceschanged = () => {
+                const voices = synth.getVoices();
+                const femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.toLowerCase().includes('female'));
+                const selectedVoice = femaleVoice || voices.find(voice => voice.lang === 'pt-BR');
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                }
+                synth.speak(utterance);
+            };
+
+            // Inicia a fala imediatamente caso as vozes já estejam carregadas
+            if (synth.getVoices().length) {
+                synth.speak(utterance);
+            }
+        } else {
+            alert('Desculpe, seu navegador não suporta a síntese de fala.');
+        }
+    });
+    
+         // Função para iniciar a leitura de texto
+         function iniciarLeitura() {
+            const lerVozButton = document.getElementById('leitura');
+            const texto = document.body.innerText.replace(lerVozButton.innerText, '');
+    
+            if ('speechSynthesis' in window) {
+                const synth = window.speechSynthesis;
+    
+                // Interrompe qualquer fala em andamento
+                if (synth.speaking) {
+                    synth.cancel();
+                }
+    
+                // Cria uma nova instância de SpeechSynthesisUtterance com o texto
+                const utterance = new SpeechSynthesisUtterance(texto);
+                utterance.lang = 'pt-BR';
+    
+                // Define a voz a ser usada
+                synth.onvoiceschanged = () => {
+                    const voices = synth.getVoices();
+                    const femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.toLowerCase().includes('female'));
+                    const selectedVoice = femaleVoice || voices.find(voice => voice.lang === 'pt-BR');
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                    }
+                    synth.speak(utterance);
+                };
+    
+                if (synth.getVoices().length) {
+                    synth.speak(utterance);
+                }
+            } else {
+                alert('Desculpe, seu navegador não suporta a síntese de fala.');
+            }
+        }
+    
+        // Adiciona o evento de clique ao botão de leitura
+        document.getElementById('leitura').addEventListener('click', iniciarLeitura);
+    
+        // Adiciona o evento de teclado para Ctrl + B
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'b') {
+                event.preventDefault(); // Impede a ação padrão do atalho
+                iniciarLeitura();
+            }
+        });
+
+</script>
+
+</body>
+</html>

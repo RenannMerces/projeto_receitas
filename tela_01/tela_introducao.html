@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita Doces</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="../css/tela_introducao.css">
+</head>
+<body>
+    <main class="complete-box">
+        <div class="container">
+            <img id="icon" src="../src/bolo.png" alt="Imagem do Bolo">
+            <p id="titulo_receita">Receitas<br> de Bolo</p>
+        </div>
+        <button onclick="window.location.href='/tela_02/tela_cards.html'" id="btn_receita">Receitas aqui!</button>
+    </main>
+
+    <script>
+       
+    
+        document.getElementById('btn_receita').addEventListener('click', function() {
+                // Texto explicativo sobre o funcionamento do site de receitas de bolo
+                const explicacao = `
+                    Você entrou para a tela de receitas!
+                `;
+        
+                if ('speechSynthesis' in window) {
+                    const synth = window.speechSynthesis;
+        
+                    // Interrompe qualquer fala em andamento
+                    if (synth.speaking) {
+                        synth.cancel();
+                    }
+        
+                    const utterance = new SpeechSynthesisUtterance(explicacao);
+                    utterance.lang = 'pt-BR';
+        
+                    synth.onvoiceschanged = () => {
+                        const voices = synth.getVoices();
+                        const femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.toLowerCase().includes('female'));
+                        const selectedVoice = femaleVoice || voices.find(voice => voice.lang === 'pt-BR');
+                        if (selectedVoice) {
+                            utterance.voice = selectedVoice;
+                        }
+                        synth.speak(utterance);
+                    };
+        
+                    // Inicia a fala imediatamente caso as vozes já estejam carregadas
+                    if (synth.getVoices().length) {
+                        synth.speak(utterance);
+                    }
+                } else {
+                    alert('Desculpe, seu navegador não suporta a síntese de fala.');
+                }
+            });
+            </script>
+</body>
+</html>

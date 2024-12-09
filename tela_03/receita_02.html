@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="/css/receita_02.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Major+Mono+Display&family=Overlock+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Baloo+Thambi+2:wght@400..800&family=Major+Mono+Display&family=Overlock+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="complete-box">
+        <nav class="nav">
+            <button onclick="window.location.href='/tela_02/tela_cards.html'" id="btn_voltar" aria-hidden="true">Voltar</button>
+            <button id="leitura">Leitura</button>
+        </nav>
+        <main class="principal">
+            <header class="container-topo">
+                 <figure class="container-img">
+                     <img src="/src/bolo_abobora.jpg" alt="Um bolo de chocolate">
+                     <!-- <figcaption>Imagem de um delicioso bolo de chocolate</figcaption> -->
+                 </figure>
+                 <section class="container-titulo">
+                    <h1 class="titulo-receita">Bolo de Cenoura</h1>
+                 </section>
+            </header>
+            <aside class="container-video">
+                <iframe  src="https://www.youtube.com/embed/__rtbSd_OwI?si=eScDFzvMCLnwpwZA" title="YouTube video player" title="YouTube video da receita" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius: 40px;"></iframe>
+            </aside>
+            <body>
+                <section>
+                    <h2 class="decoracao-section" id="ingredientes-titulo">Ingredientes</h2>
+                </section>
+                <section>
+                    <article>
+                        <h3 class="decoracao-section" id="massa-titulo">MASSA</h3>
+                    </article>
+                    <ul class="receita-texto" style="list-style-type: none;">
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>2 cenouras médias, cortadas em cubos. - (300g)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>1/2 xícara de chá de óleo. - (125ml)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>3 ovos.</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>1/2 xícara de chá de Amido de Milho Maizena.</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>1/2 xícara de chá de farinha de trigo. - (210g)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p2>2 colheres de chá de fermento em pó. - (8g)</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>1 xícara de chá de açúcar. -(190g) </p>
+                        </li>
+                        <li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 class="decoracao-section" id="calda-titulo">COBERTURA</h3>
+                    <ul class="receita-texto" style="list-style-type: none;">
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>1/2 xícara de chocolate ao leite derretido</p>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="checkbox" class="colored-checkbox">
+                            <p>1/2 xícara de creme de leite</p>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    
+                </section>
+
+            </body>
+         </main>
+    </div>
+
+    <script>
+
+document.getElementById('btn_voltar').addEventListener('click', function() {
+        // Texto explicativo sobre o funcionamento do site de receitas de bolo
+        const explicacao = `
+            Você voltou para a tela de receitas!
+        `;
+
+        if ('speechSynthesis' in window) {
+            const synth = window.speechSynthesis;
+
+            // Interrompe qualquer fala em andamento
+            if (synth.speaking) {
+                synth.cancel();
+            }
+
+            const utterance = new SpeechSynthesisUtterance(explicacao);
+            utterance.lang = 'pt-BR';
+
+            synth.onvoiceschanged = () => {
+                const voices = synth.getVoices();
+                const femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.toLowerCase().includes('female'));
+                const selectedVoice = femaleVoice || voices.find(voice => voice.lang === 'pt-BR');
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                }
+                synth.speak(utterance);
+            };
+
+            // Inicia a fala imediatamente caso as vozes já estejam carregadas
+            if (synth.getVoices().length) {
+                synth.speak(utterance);
+            }
+        } else {
+            alert('Desculpe, seu navegador não suporta a síntese de fala.');
+        }
+    });
+
+            // Função para iniciar a leitura de texto
+            function iniciarLeitura() {
+            const lerVozButton = document.getElementById('leitura');
+            const texto = document.body.innerText.replace(lerVozButton.innerText, '');
+    
+            if ('speechSynthesis' in window) {
+                const synth = window.speechSynthesis;
+    
+                // Interrompe qualquer fala em andamento
+                if (synth.speaking) {
+                    synth.cancel();
+                }
+    
+                // Cria uma nova instância de SpeechSynthesisUtterance com o texto
+                const utterance = new SpeechSynthesisUtterance(texto);
+                utterance.lang = 'pt-BR';
+    
+                // Define a voz a ser usada
+                synth.onvoiceschanged = () => {
+                    const voices = synth.getVoices();
+                    const femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.toLowerCase().includes('female'));
+                    const selectedVoice = femaleVoice || voices.find(voice => voice.lang === 'pt-BR');
+                    if (selectedVoice) {
+                        utterance.voice = selectedVoice;
+                    }
+                    synth.speak(utterance);
+                };
+    
+                if (synth.getVoices().length) {
+                    synth.speak(utterance);
+                }
+            } else {
+                alert('Desculpe, seu navegador não suporta a síntese de fala.');
+            }
+        }
+    
+        // Adiciona o evento de clique ao botão de leitura
+        document.getElementById('leitura').addEventListener('click', iniciarLeitura);
+    
+        // Adiciona o evento de teclado para Ctrl + B
+        document.addEventListener('keydown', function(event) {
+            if (event.ctrlKey && event.key === 'b') {
+                event.preventDefault(); // Impede a ação padrão do atalho
+                iniciarLeitura();
+            }
+        });
+
+    </script>
+</body>
+</html>

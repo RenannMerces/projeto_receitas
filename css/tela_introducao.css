@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton+SC&family=Bebas+Neue&display=swap');
+
+body {
+    background-color: #FACAE7;
+    margin: 0;
+    padding: 0;
+    font-family: "Alfa Slab One", serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center; 
+    gap: 20px; 
+    height: 60%; 
+}
+
+#titulo_receita {
+    color: #604A49;
+    font-family: "Alfa Slab One", serif;
+    text-align: center;
+    font-size: 8vw; 
+    text-shadow: 2px 7px 2px rgba(0, 0, 0, 0.3);
+    margin: 0; 
+    flex: 1; 
+    transition: 0.5s;
+}
+
+#titulo_receita:hover {
+    opacity: 0.9;
+    text-shadow: 2px 6px 5px rgba(0, 0, 0, 0.3);
+}
+
+#icon {
+    width: 400px; 
+    height: 400px; 
+    margin: 0; 
+    box-sizing: border-box; 
+    flex-shrink: 0;
+    transition: transform 0.3s ease-in-out; 
+}
+
+#icon:hover {
+    transform: scale(1.1); 
+}
+
+.complete-box {
+    width: calc(100% - 40px); 
+    height: calc(100vh - 40px); 
+    border: 5px solid #604A49;
+    border-radius: 30px;
+    margin: 20px; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+
+#btn_receita {
+    font-family: "Alfa Slab One", serif;
+    letter-spacing: 2px;
+    background-color: #604A49;
+    color: #FAF3CA;
+    border: 5px solid #604A49;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 35px;
+    transition: 0.5s;
+    margin-top: 10px; 
+}
+
+#btn_receita:hover {
+    background-color: #FAF3CA;
+    color: #604A49;
+    border: 5px solid #FAF3CA;
+    transition: 0.7s;
+    opacity: 0.9;
+}
+
+/*? Media para diferentes tamanhos de tela */
+
+@media (min-width: 769px) {
+    .container {
+        flex-direction: row; 
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    #titulo_receita {
+        font-size: 50px;
+        margin-bottom: 100px;
+    }
+
+    #icon {
+        width: 200px; 
+        height: 200px;
+        margin-bottom: 1%;
+    }
+
+    .complete-box {
+        width: calc(98% - 10px); 
+        height: calc(100vh - 10px); 
+        margin: 10px; 
+    }
+
+    #btn_receita {
+        font-size: 20px;
+        padding: 14px 28px; 
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #titulo_receita {
+        font-size: 50px;
+    }
+
+    #icon {
+        width: 200px; 
+        height: 200px;
+        margin-bottom: 1%;
+    }
+
+    .complete-box {
+        width: calc(100% - 10px); 
+        height: calc(100vh - 10px); 
+        margin: 5px; 
+    }
+
+    #btn_receita {
+        font-size: 15px;
+        padding: 14px 28px; 
+        margin-top: 20px; 
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards de Receitas</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/tela_cards.css">
+</head>
+<body>
+    <main class="complete-box">
+        <header class="header">
+            <button onclick="window.location.href='/tela_01/tela_introducao.html'" id="btn_voltar">Voltar</button>
+            <button id="orientacao">Orientação</button>
+            <nav class="topo_cards">
+                <p id="titulo_cards">Receitas de Bolo</p>
+            </nav>
+        </header>
+        <section class="container">
+            <article class="card">
+                <img src="/src/bolo_chocolate.jpg" alt="Imagem de um bolo de maçã" class="card-img">
+                <footer class="card-container">
+                    <p class="card-titulo">Bolo de Chocolate</p>
+                    <p class="card-descricao">Muito Gostoso "nunca provei"</p>
+                    <a href="/tela_03/receita.html" class="card-btn">Receita Aqui!</a>
+                </footer>
+            </article>
+            <article class="card">
+                <img src="/src/bolo_abobora.jpg" alt="Imagem de um bolo de abóbora" class="card-img">
+                <footer class="card-container">
+                    <p class="card-titulo">Bolo de Cenoura</p>
+                    <p class="card-descricao">Melhor Sabor.</p>
+                    <a href="/tela_03/receita_02.html" class="card-btn">Receita Aqui!</a>
+                </footer>
+            </article>
+            <article class="card">
+                <img src="/src/bolo_jaca_02.jpg" alt="Imagem de um bolo de jaca" class="card-img">
+                <footer class="card-container">
+                    <p class="card-titulo">Bolo de Jaca</p>
+                    <p class="card-descricao">Existe isso?</p>
+                    <a href="/tela_03/receita_03.html" class="card-btn">Receita Aqui!</a>
+                </footer>
+            </article>
+        </section>
+    </main>
+</body>
+
+<script>
+    // Função para iniciar a síntese de fala
+    function speak(text) {
+        if ('speechSynthesis' in window) {
+            const synth = window.speechSynthesis;
+
+            // Interrompe qualquer fala em andamento
+            if (synth.speaking) {
+                synth.cancel();
+            }
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'pt-BR';
+
+            synth.onvoiceschanged = () => {
+                const voices = synth.getVoices();
+                const femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.toLowerCase().includes('female'));
+                const selectedVoice = femaleVoice || voices.find(voice => voice.lang === 'pt-BR');
+                if (selectedVoice) {
+                    utterance.voice = selectedVoice;
+                }
+                synth.speak(utterance);
+            };
+
+            // Inicia a fala imediatamente caso as vozes já estejam carregadas
+            if (synth.getVoices().length) {
+                synth.speak(utterance);
+            }
+        } else {
+            alert('Desculpe, seu navegador não suporta a síntese de fala.');
+        }
+    }
+
+    // Texto explicativo
+    const explicacao = ` 
+        Aqui você encontra uma variedade de receitas de bolos deliciosos.
+        Na parte superior da página, você verá uma lista de categorias. 
+        Cada categoria contém receitas específicas que você pode explorar.
+        Clique em qualquer receita para ver os ingredientes e o modo de preparo detalhado.
+        Aproveite e experimente novas receitas para adoçar o seu dia!
+    `;
+    
+    const explicacaoInicial = `
+        Bem-vindo ao site de receitas de bolo! 
+        Caso necessite de orientações de voz, clique no botão localizado no canto superior direito da tela ou clique control + b no teclado
+    `;
+    
+    // Função para verificar e apresentar a explicação inicial
+    function mostrarExplicacaoInicial() {
+        if (!sessionStorage.getItem('explicacaoInicialMostrada')) {
+            speak(explicacaoInicial);
+            sessionStorage.setItem('explicacaoInicialMostrada', 'true');
+        }
+    }
+    
+    // Adiciona eventos
+    document.addEventListener('DOMContentLoaded', () => {
+        mostrarExplicacaoInicial();
+    });
+    
+    document.getElementById('orientacao').addEventListener('click', () => speak(explicacao));
+    
+    document.addEventListener('keydown', event => {
+        if (event.ctrlKey && event.key === 'b') {
+            speak(explicacao);
+        }
+    });
+    
+    document.getElementById('btn_voltar').addEventListener('click', function() {
+        // Texto explicativo sobre o funcionamento do site de receitas de bolo
+        const explicacao = `
+            Você voltou para a tela inicial!
+        `;
+
+        speak(explicacao);
+    });
+</script>
+
+</html>

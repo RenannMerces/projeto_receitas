@@ -1,0 +1,622 @@
+body{
+    background-color: #C7FAE0;
+    margin: 0;
+    padding: 0;
+    font-family: "Alfa Slab One", serif;
+    
+}
+/* bordar-decoração */
+.complete-box {
+    width: calc(100% - 40px); 
+    height: 200vh; 
+    border: 5px solid #604A49;
+    border-radius: 30px;
+    margin: 20px; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    /*justify-content: center;  */
+}
+
+/* nav-btn */
+.nav{
+    display: flex;
+    flex-direction: row;    
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+/* btn-voltar navegação*/
+#btn_voltar {
+    font-family: "Alfa Slab One", serif;
+    letter-spacing: 2px;
+    background-color: #604A49;
+    color: #FAF3CA;
+    border: 5px solid #604A49;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 35px;
+    transition: 0.5s;
+    margin-top: 10px; 
+}
+
+#btn_voltar:hover {
+    background-color: #FAF3CA;
+    color: #604A49;
+    border: 5px solid #FAF3CA;
+    transition: 0.7s;
+    opacity: 0.9;
+}
+
+#leitura {
+    font-family: "Alfa Slab One", serif;
+    letter-spacing: 2px;
+    background-color: #604A49;
+    color: #FAF3CA;
+    border: 5px solid #604A49;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 35px;
+    transition: background-color 0.5s, color 0.5s, border 0.5s, opacity 0.5s;
+    position: absolute;
+    right: 40px;  /* Posiciona à direita */
+    top: 40px;    /* Mantém o posicionamento no topo */
+}
+
+#leitura:hover {
+    background-color: #FAF3CA;
+    color: #604A49;
+    border: 5px solid #FAF3CA;
+    opacity: 0.9;
+}
+
+/* main principal */
+.principal{
+    display: flexbox;
+    width: 90%;
+    /* justify-items: center; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    align-content: center;
+    
+    
+}
+
+/* container do topo - header */
+.container-topo{
+    background-color: #81E4B3;
+    display: flex;
+    border-radius: 40px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center; 
+    width: 75%;
+    /*align-content: center; */
+    /*justify-content: center; */
+    transition: 0.5s;
+   
+}
+
+.container-topo:hover{
+    transform: scale(1.1); 
+    transition: 0.5s;
+}
+
+/* figure-img */
+figure {
+    margin: 25px;
+    justify-items: center;
+    align-self: center;
+}
+img {
+    width: 200px;
+    border-radius: 25px;
+}
+
+/* section-titulo*/
+.container-titulo {
+    display: flex;
+    /* margin-right: 50px;  */
+    text-shadow: 5px 15px 3px #604a4957;
+    
+}
+
+
+.titulo-receita{
+    color: #604A49;
+    font-size: 80px;
+    margin: 0px;
+    text-align: center;
+    font-family: Alfa Slab One;
+    
+}
+
+
+
+/* container-video */
+.container-video{
+    display: flex;
+    margin: 50px; 
+    align-content: center;
+    justify-content: center;
+    transition: 0.5s;
+    
+}
+
+.container-video:hover {
+    transform: scale(1.1); 
+    transition: 0.5s;
+}
+
+/* video */
+iframe {
+    width: 560px ;
+    height: 315px;
+    /*width: 65%;*/
+    border: solid 20px #81E4B3;
+    transition: 0.5s;
+}
+
+iframe:hover {
+    border: solid 20px #72605f;
+}
+
+/* receita-text */
+.decoracao-section{
+    display: flex;
+    text-align: center;
+    color: #604A49;
+    align-items: center;
+    
+}
+
+#ingredientes-titulo{
+    display: flex;
+    background-color: #81E4B3;
+    border-radius: 40px;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    width: 25%;
+    height: 55px;
+    font-family: "Baloo Thambi 2", system-ui;
+    text-shadow: 2px 2px 4px #837170;
+    transition: 0.5s;
+
+}
+
+#ingredientes-titulo:hover {
+    background-color: #604A49;
+    color: #abbde4;
+    text-shadow: 2px 2px 4px #727e94;
+    transition: transform 0.3s ease-in-out;
+    transition: 0.7s;
+    opacity: 0.9; 
+    transform: scale(1.1); 
+    transition: 0.5s;
+}
+
+#massa-titulo{
+    display: flex;
+    background-color: #81E4B3;
+    border-radius: 40px;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    width: 15%;
+    height: 50px;
+    font-family: "Baloo Thambi 2", system-ui;
+    text-shadow: 2px 2px 4px #837170;
+    transition: 0.5s;
+    
+}
+
+#massa-titulo:hover {
+    background-color: #604A49;
+    color: #abbde4;
+    text-shadow: 2px 2px 4px #727e94;
+    transition: transform 0.3s ease-in-out;
+    transition: 0.7s;
+    opacity: 0.9; 
+    transform: scale(1.1); 
+    transition: 0.5s;
+}
+
+#calda-titulo{
+    display: flex;
+    background-color: #81E4B3;
+    border-radius: 40px;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    width: 25%;
+    height: 50px;
+    font-family: "Baloo Thambi 2", system-ui;
+    text-shadow: 2px 2px 4px #837170;
+    transition: 0.5s;
+}
+
+#calda-titulo:hover{
+    background-color: #604A49;
+    color: #abbde4;
+    text-shadow: 2px 2px 4px #727e94;
+    transition: transform 0.3s ease-in-out;
+    transition: 0.7s;
+    opacity: 0.9; 
+    transform: scale(1.1); 
+    transition: 0.5s;
+}
+
+
+#cobertura-titulo {
+    display: flex;
+    background-color: #81E4B3;
+    border-radius: 40px;
+    justify-content: center;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    width: 35%;
+    height: 50px;
+    font-family: "Baloo Thambi 2", system-ui;
+    text-shadow: 2px 2px 4px #837170;
+    transition: 0.5s;
+}
+
+#cobertura-titulo:hover {
+    background-color: #604A49;
+    color: #abbde4;
+    text-shadow: 2px 2px 4px #727e94;
+    transition: transform 0.3s ease-in-out;
+    transition: 0.7s;
+    opacity: 0.9; 
+    transform: scale(1.1); 
+    transition: 0.5s;
+}
+.receita-texto {
+    font-size: 25px;
+    margin-left: 50px;
+    color: #2e2423;
+    font-family: "Baloo Thambi 2", system-ui;
+}
+
+
+li{
+    text-decoration-style: none;
+    
+}
+
+ /* checkbox */
+input[type="checkbox"]:checked + p {
+    text-decoration: line-through;
+    text-decoration-color: #2e2423; /* Cor da linha */
+    border-radius: 10px;
+    opacity: 0.4;
+}
+
+
+li > input[type="checkbox"],
+li > p {
+    display: inline;
+    width: 30px;
+    height: 30px;
+    
+
+}
+
+.colored-checkbox {
+    display: none;
+    accent-color: #604A49 !important; /* Cor da checkbox */
+    border: solid #a8e6ac !important;
+}
+
+/* responsividade */
+/*!------------------------ Responsividade 1120px ---------------------------------*/
+
+@media (max-width: 1150px) {
+
+    #leitura {
+        font-size: 20px;
+        padding: 8px 16px;
+        right: 30px;
+        top: 35px;
+    }
+
+    .complete-box {
+        width: calc(100% - 20px);
+        height: 250vh;
+        margin: 10px;
+    }
+
+    #btn_voltar {
+        font-size: 20px;
+    }
+
+    .container-topo{
+        width: 90%;
+    
+    }
+    .titulo-receita {
+        font-size: 80px;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    iframe{
+        width: 70%;
+        height: 35vh;
+       
+    }
+
+    li > input[type="checkbox"],
+    li > p {
+    width: 20px;
+    height: 20px;
+    }
+
+
+
+}
+/*! ------------------------ CSS para telas entre 980px a 860px ------------------------------!*/
+
+@media (max-width: 890px) {
+
+    #leitura {
+        font-size: 20px;
+        padding: 6px 12px;
+        right: 25px;
+        top: 30px;
+    }
+
+    .complete-box {
+        width: calc(100% - 10px);
+        height: 390vh; 
+        margin: 5px;
+    }
+
+    #btn_voltar {
+        font-size: 20px;
+        padding: 5px 10px; 
+        left: 15px;
+        top: 15px;
+    }
+
+    /*Topo*/
+    .container-topo{
+        width: 95%;
+    
+    }
+    .titulo-receita {
+        font-size: 70px;
+        
+    }
+
+    img {
+        width: 190px;
+    }
+
+    figure{
+        margin: 25px;
+    }
+     
+    iframe{
+        width: 80%;
+        height: 25vh;
+        margin: 20px;
+    }
+   
+    #cobertura-titulo{
+        font-size: 25px;
+        width: 45%;
+    }
+
+    .receita-texto {
+        font-size: 25px;
+    }
+}   
+   /* #cobertura-titulo{
+        font-size: 20px;
+    }
+}
+
+
+/** da menor tela para a maior*/
+/*! ------------------------ CSS para telas entre 540 px a px ------------------------------!*/
+
+@media (max-width: 750px) {
+
+    #leitura {
+        font-size: 20px;
+        padding: 5px 10px;
+        right: 25px;
+        top: 30px;
+    }
+    
+    .complete-box {
+        width: calc(100% - 10px);
+        height: 500vh; 
+        margin: 5px;
+    }
+
+    #btn_voltar {
+        font-size: 20px;
+        padding: 5px 10px; 
+        left: 15px;
+        top: 15px;
+    }
+
+    /*Topo*/
+    .container-topo{
+       display: flex;
+       width: 95%;
+       height: 200px;
+       justify-items: center;
+       align-items: center;
+    }
+
+    .titulo-receita {
+        font-size: 50px;
+        margin-right: 50px;
+    }
+
+    img {
+        width: 170px;
+    }
+
+    figure{
+        margin-top: 25px;
+    }
+
+    
+    iframe{
+        width: 90%;
+        height: 35vh;
+       
+    }
+    .container-video{
+        margin: 40px;
+        
+    }
+}  
+    /*Texto-receita*/
+   /* #ingredientes-titulo {
+        font-size: 30px;
+        width: 60%;
+        
+    }
+
+    #massa-titulo {
+        font-size: 25px;
+        width: 30%;
+    }
+
+    #calda-titulo {
+        font-size: 25px;
+        width: 60%;
+    }
+
+    #cobertura-titulo{
+        font-size: 25px;
+        width: 80%;
+
+    }
+
+    .receita-texto {
+        font-size: 20px;
+        margin-left: 0px;
+    }
+
+    
+    
+}
+
+/** da menor tela para a maior*/
+/*! ------------------------ CSS para telas entre 480 px a 400px ------------------------------!*/
+
+@media (max-width: 600px) {
+
+    #leitura {
+        font-size: 20px;
+        padding: 5px 10px;
+        right: 25px;
+        top: 30px;
+    }
+
+    .complete-box {
+        width: calc(100% - 10px);
+        height: 490vh; 
+        margin: 5px;
+    }
+
+    #btn_voltar {
+        font-size: 20px;
+        padding: 5px 10px; 
+        left: 15px;
+        top: 15px;
+    }
+
+    /*Topo*/
+   .container-topo{
+       display: block;
+       width: 80%;
+       height: 25%;
+       justify-items: center;
+       align-items: center;
+    }
+
+    .titulo-receita {
+        font-size: 50px;
+        margin: 0px;
+    }
+
+    .container-titulo{
+        justify-items: center;
+        align-items: center;
+    }
+
+    img{
+        margin-top: 35px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        width: 70%;
+    }
+
+    figure{
+        justify-items: center;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    iframe{
+        width: 100%;
+        height: 20vh;
+       
+    }
+    .container-video{
+        margin: 40px;
+    }
+  
+    /*Texto-receita*/
+   #ingredientes-titulo {
+        font-size: 25px;
+        width: 70%;
+        
+    }
+
+    #massa-titulo {
+        font-size: 20px;
+        width: 40%;
+    }
+
+    #calda-titulo {
+        font-size: 20px;
+        width: 70%;
+    }
+
+    #cobertura-titulo{
+        font-size: 20px;
+        width: 80%;
+
+    }
+
+    .receita-texto {
+        font-size: 20px;
+        margin-left: 0px;
+    }
+}
